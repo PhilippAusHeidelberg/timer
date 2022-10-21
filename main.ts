@@ -1,18 +1,18 @@
+// A+B setzt den Timer zurück auf den Startwert
+input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
+    Restzeit = Startwert
+})
 // Knopf A erhöht die Zeit die der Timer läuft: pro Klick eine Minute mehr
-input.onButtonPressed(Button.A, function () {
+input.onButtonEvent(Button.A, ButtonEvent.Click, function () {
     Restzeit += 10
     Startwert += 10
-})
-// A+B setzt den Timer zurück auf den Startwert
-input.onButtonPressed(Button.AB, function () {
-    Restzeit = Startwert
 })
 // ohne das Timer läuft:
 // Knopf B startet den Timer. 
 // 
 // bei laufendem Timer:
 // Knopf B pausiert den Timer
-input.onButtonPressed(Button.B, function () {
+input.onButtonEvent(Button.B, ButtonEvent.Click, function () {
     if (Timer_ist_an) {
         Timer_ist_an = false
         basic.showLeds(`
